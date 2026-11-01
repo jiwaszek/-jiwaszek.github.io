@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CSDeveloper Privacy Policy</title>
+  <meta name="description" content="Privacy policy for the CSDeveloper iOS app.">
+  <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+  <header class="site">
+    <a class="home" href="/">Jakub Iwaszek</a>
+    <a href="/support/">Support</a>
+    <a href="/privacy/">Privacy</a>
+  </header>
+
+  <main>
+    <h1>CSDeveloper Privacy Policy</h1>
+    <p class="muted">Last updated: November 1, 2026</p>
+
+    <p>CSDeveloper (“the app”) is a study app for iOS developer interviews, made by Jakub Iwaszek (“I”, “me”). This policy explains what data the app handles, where it goes, and how you can control it.</p>
+
+    <div class="card">
+      <h3>Summary</h3>
+      <ul>
+        <li>No account, no ads, no analytics, no tracking.</li>
+        <li>Your study progress and settings are stored only on your device. I never receive them.</li>
+        <li>AI features run on your device with Apple Intelligence by default.</li>
+        <li>Only if you choose OpenAI and enter your own API key does the app send study content and your chat messages to OpenAI.</li>
+      </ul>
+    </div>
+
+    <h2>Data stored on your device</h2>
+    <div class="table-wrap">
+      <table>
+        <tr><th>Data</th><th>Purpose</th></tr>
+        <tr><td>Study content (topics, answers, quiz questions)</td><td>Shown in the app and available offline</td></tr>
+        <tr><td>Review progress (which cards you reviewed, your grades, when each card is due next)</td><td>Spaced-repetition scheduling</td></tr>
+        <tr><td>Preferences (selected AI provider, content version)</td><td>Remembering your settings</td></tr>
+        <tr><td>OpenAI API key, if you enter one</td><td>Authenticating requests to OpenAI. Stored in the iOS Keychain.</td></tr>
+      </table>
+    </div>
+    <p>This data is not synced to iCloud or any server, and I have no access to it. Deleting the app deletes all of it. You can remove the OpenAI key at any time from the app's Settings.</p>
+
+    <h2>Content updates</h2>
+    <p>When the app launches, it checks for updated study content by downloading files from my website, hosted on GitHub Pages (<code>jiwaszek.github.io</code>). These requests contain no personal data from the app. As with any website, GitHub may log technical information such as your IP address. See the <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub Privacy Statement</a>.</p>
+
+    <h2>AI features</h2>
+
+    <h3>Apple Intelligence (default)</h3>
+    <p>When Apple Intelligence is selected, quiz generation and the “Ask AI” chat use Apple's on-device language model. The study content and your messages are processed on your device and are not sent to me or to any third party by the app.</p>
+
+    <h3>OpenAI (optional, off by default)</h3>
+    <p>If you select <strong>OpenAI</strong> in Settings and enter your own OpenAI API key, the app sends the following to OpenAI's API (<code>api.openai.com</code>) when you use an AI feature:</p>
+    <ul>
+      <li>The text of the study topic you're working with: its question, answer, key points and common misconception</li>
+      <li>The messages you type in the “Ask AI” chat</li>
+      <li>Your API key, which OpenAI uses to authenticate the request and bill your OpenAI account</li>
+    </ul>
+    <p>The app does not send your name, contact details, device identifiers, location or review history to OpenAI. Don't type personal information into the chat.</p>
+    <p>These requests go directly from your device to OpenAI under your own OpenAI account. I don't receive or store them. OpenAI processes this data under its own terms. See the <a href="https://openai.com/policies/privacy-policy/">OpenAI Privacy Policy</a> and <a href="https://openai.com/enterprise-privacy/">OpenAI's API data practices</a>.</p>
+    <p>To stop sending data to OpenAI, switch the AI provider back to Apple Intelligence and clear your API key in the app's Settings.</p>
+
+    <h2>Data I collect</h2>
+    <p>None. The app has no backend that receives user data, and it contains no analytics, advertising or tracking code. If you share analytics with developers in your device settings, Apple may provide me with anonymized crash reports.</p>
+
+    <h2>Children</h2>
+    <p>The app is not directed at children under 13, and I don't knowingly collect personal data from children.</p>
+
+    <h2>Your choices and rights</h2>
+    <p>Because the app's data is stored only on your device, you control it directly. You can clear your API key in Settings or delete the app to remove everything. For data you sent to OpenAI, contact OpenAI as described in their privacy policy. If you have questions or requests about your data, email me.</p>
+
+    <h2>Changes to this policy</h2>
+    <p>If the app's data practices change, I'll update this page and its “Last updated” date before the change ships.</p>
+
+    <h2>Contact</h2>
+    <p><a href="mailto:kubaa771@gmail.com">kubaa771@gmail.com</a></p>
+  </main>
+
+  <footer>
+    <a href="/privacy/">All privacy policies</a> · <a href="/support/#csdeveloper">CSDeveloper support</a> · <a href="/">All apps</a>
+  </footer>
+</body>
+</html>
