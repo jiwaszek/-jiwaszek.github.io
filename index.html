@@ -3,33 +3,209 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Jakub Iwaszek – Apps</title>
-  <meta name="description" content="iOS apps by Jakub Iwaszek, with support and privacy information.">
+  <title>Jakub Iwaszek – iOS Developer</title>
+  <meta name="description" content="Jakub Iwaszek is an iOS developer with 5 years of experience building native apps in Swift and SwiftUI. Creator of ShareMeList and CSDeveloper.">
+  <meta property="og:title" content="Jakub Iwaszek – iOS Developer">
+  <meta property="og:description" content="Native iOS apps in Swift and SwiftUI: offline-first, private by default, and well tested.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://jiwaszek.github.io/">
+  <meta property="og:image" content="https://jiwaszek.github.io/assets/img/sml-list.jpg">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%233a4fd1'/%3E%3Ctext x='32' y='42' font-family='-apple-system,Helvetica,Arial' font-size='28' font-weight='700' fill='white' text-anchor='middle'%3EJI%3C/text%3E%3C/svg%3E">
   <link rel="stylesheet" href="/assets/style.css">
 </head>
-<body>
-  <header class="site">
+<body class="home-page">
+  <header class="site wide">
     <a class="home" href="/">Jakub Iwaszek</a>
+    <a href="#work">Work</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact">Contact</a>
     <a href="/support/">Support</a>
     <a href="/privacy/">Privacy</a>
   </header>
 
-  <main>
-    <h1>Apps</h1>
-    <p class="muted">Independent iOS apps. No accounts, no ads, no tracking.</p>
+  <main class="wide">
 
-    <div class="card">
-      <h3>CSDeveloper</h3>
-      <p>Prepare for iOS developer interviews with curated Q&amp;A, spaced-repetition review, quizzes and an optional AI study assistant.</p>
-      <p>
-        <a href="/support/#csdeveloper">Support</a> ·
-        <a href="/privacy/csdeveloper/">Privacy Policy</a>
-      </p>
-    </div>
+    <!-- Hero -->
+    <section class="hero">
+      <p class="eyebrow">iOS Developer · 5 years of experience</p>
+      <h1>I build native iOS apps that work offline, respect privacy and stay maintainable.</h1>
+      <p class="lede">I'm Jakub, an iOS developer working in Swift and SwiftUI. On my own I design, build and ship apps to the App Store: real-time collaboration, on-device AI, modular architectures and the tests that keep them reliable.</p>
+      <div class="actions">
+        <a class="btn primary" href="#work">See my work</a>
+        <a class="btn" href="mailto:kubaa771@gmail.com">Email me</a>
+        <a class="btn" href="https://github.com/jiwaszek">GitHub</a>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="work" class="section">
+      <h2 class="section-title">Selected work</h2>
+      <p class="muted section-sub">Two apps I designed, built and published end to end.</p>
+
+      <!-- ShareMeList -->
+      <article class="project" id="sharemelist">
+        <div class="project-head">
+          <div>
+            <h3>ShareMeList</h3>
+            <p class="tagline">Shared grocery lists &amp; bill splitting</p>
+          </div>
+          <ul class="chips">
+            <li>iOS 17+</li><li>SwiftUI</li><li>Swift 6</li><li>Supabase</li><li>Realtime</li>
+          </ul>
+        </div>
+
+        <p class="project-intro">A shopping list you share with the people you live with. Add an item on one phone and it shows up on everyone's straight away, even after a stretch offline in the shop. After shopping, the app splits the bill and keeps track of who owes whom.</p>
+
+        <div class="shots" role="list">
+          <figure role="listitem"><img src="/assets/img/sml-list.jpg" alt="ShareMeList list screen with products grouped by aisle" loading="lazy" width="552" height="1200"></figure>
+          <figure role="listitem"><img src="/assets/img/sml-checkout.jpg" alt="Checkout screen for splitting the cost of a shopping trip" loading="lazy" width="552" height="1200"></figure>
+          <figure role="listitem"><img src="/assets/img/sml-balances.jpg" alt="Balances screen showing who owes whom" loading="lazy" width="552" height="1200"></figure>
+          <figure role="listitem"><img src="/assets/img/sml-invite.jpg" alt="Invitation screen with a QR code" loading="lazy" width="552" height="1200"></figure>
+        </div>
+
+        <div class="columns">
+          <div>
+            <h4>What it does</h4>
+            <ul>
+              <li>Shared lists that sync live between everyone on them</li>
+              <li>Works fully offline and catches up when the connection returns</li>
+              <li>Quick entry: “2 kg apples” fills in the quantity for you</li>
+              <li>Groups products by aisle automatically, in English and Polish</li>
+              <li>Invite by QR code, link or AirDrop</li>
+              <li>Checkout splits each trip to the cent, in multiple currencies, with balances and history</li>
+            </ul>
+          </div>
+          <div>
+            <h4>How it's built</h4>
+            <ul>
+              <li><strong>Offline-first sync engine.</strong> The UI is a server-confirmed snapshot with a persistent outbox of pending changes on top, so updates feel instant and survive restarts</li>
+              <li><strong>Conflict handling.</strong> Edits are per-field last-write-wins, client-generated IDs make retries idempotent, and versioned tombstones mean deleted items never come back</li>
+              <li><strong>Security on the backend.</strong> Postgres row-level security decides every read and write. Invitations and disconnects are atomic SQL functions with their own SQL test suite</li>
+              <li><strong>Clean layering.</strong> A SwiftUI app sits on a local Swift package. Its dependency-free core runs against a <code>BackendService</code> protocol and is unit-tested with an in-memory backend</li>
+              <li><strong>Localization.</strong> Full English and Polish, including Polish plural forms, gender-neutral wording and switching language in the app without a restart</li>
+            </ul>
+          </div>
+        </div>
+
+        <p class="project-links">
+          <a href="/TogetherList/support/">Support</a> ·
+          <a href="/TogetherList/privacy/">Privacy policy</a>
+          <!-- TODO: add App Store link once live -->
+        </p>
+      </article>
+
+      <!-- CSDeveloper -->
+      <article class="project" id="csdeveloper">
+        <div class="project-head">
+          <div>
+            <h3>CSDeveloper</h3>
+            <p class="tagline">iOS interview prep with on-device AI</p>
+          </div>
+          <ul class="chips">
+            <li>iOS 26</li><li>SwiftUI</li><li>SwiftData</li><li>Foundation Models</li><li>SPM</li>
+          </ul>
+        </div>
+
+        <p class="project-intro">A study app for iOS developer interviews. Curated questions with clear answers, key points and common pitfalls, plus spaced-repetition review and quizzes. An AI study assistant runs on device with Apple Intelligence.</p>
+
+        <div class="shots" role="list">
+          <figure role="listitem"><img src="/assets/img/csd-learn-detail.jpg" alt="CSDeveloper topic detail with answer, key points and a common mistake" loading="lazy" width="552" height="1200"></figure>
+          <figure role="listitem"><img src="/assets/img/csd-learn-topics.jpg" alt="List of study topics" loading="lazy" width="552" height="1200"></figure>
+          <figure role="listitem"><img src="/assets/img/csd-review.jpg" alt="Spaced-repetition review card" loading="lazy" width="552" height="1200"></figure>
+          <figure role="listitem"><img src="/assets/img/csd-quiz.jpg" alt="Multiple-choice quiz question" loading="lazy" width="552" height="1200"></figure>
+        </div>
+
+        <div class="columns">
+          <div>
+            <h4>What it does</h4>
+            <ul>
+              <li>Curated iOS interview Q&amp;A with key points, pitfalls and follow-up questions</li>
+              <li>Spaced-repetition review that schedules each card for the right time</li>
+              <li>Quizzes, including questions generated by AI</li>
+              <li>“Ask AI” chat about any topic</li>
+              <li>Works offline. No account, ads or tracking</li>
+            </ul>
+          </div>
+          <div>
+            <h4>How it's built</h4>
+            <ul>
+              <li><strong>Modular architecture.</strong> 10 local Swift packages: domain, persistence, content, design system and AI, plus one package per feature</li>
+              <li><strong>On-device AI.</strong> Apple's Foundation Models framework powers quiz generation and chat. A provider abstraction can switch to OpenAI with the user's own key, stored in the Keychain</li>
+              <li><strong>Spaced repetition.</strong> An SM-2 scheduler lives in the pure domain layer, with progress stored in SwiftData</li>
+              <li><strong>Content pipeline.</strong> Versioned content packs come from a manifest on GitHub Pages. The app checks ETags, verifies each pack's SHA-256 checksum and keeps working offline</li>
+              <li><strong>Testing.</strong> Unit tests use Swift Testing, and an XCUITest suite drives the app to produce the App Store screenshots</li>
+            </ul>
+          </div>
+        </div>
+
+        <p class="project-links">
+          <a href="/support/#csdeveloper">Support</a> ·
+          <a href="/privacy/csdeveloper/">Privacy policy</a>
+          <!-- TODO: add App Store link once live -->
+        </p>
+      </article>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="section">
+      <h2 class="section-title">Skills</h2>
+      <div class="skills">
+        <div class="skill-group">
+          <h4>Languages &amp; UI</h4>
+          <p>Swift, Swift Concurrency, SwiftUI, UIKit, Observation, accessibility, localization</p>
+        </div>
+        <div class="skill-group">
+          <h4>Architecture</h4>
+          <p>Modular Swift packages, MVVM, protocol-oriented design, dependency injection, offline-first design</p>
+        </div>
+        <div class="skill-group">
+          <h4>Data &amp; backend</h4>
+          <p>SwiftData, Core Data, REST, URLSession, Supabase / PostgreSQL, Realtime sync, Keychain</p>
+        </div>
+        <div class="skill-group">
+          <h4>Apple frameworks</h4>
+          <p>Foundation Models (Apple Intelligence), CryptoKit, AVFoundation, Core Image, User Notifications</p>
+        </div>
+        <div class="skill-group">
+          <h4>Quality</h4>
+          <p>Swift Testing, XCTest, XCUITest, testable architecture, Instruments</p>
+        </div>
+        <div class="skill-group">
+          <h4>Shipping</h4>
+          <p>App Store Connect, TestFlight, App Store metadata &amp; screenshots, privacy policies</p>
+        </div>
+      </div>
+    </section>
+
+    <!--
+      Experience: fill in from CV.
+    <section id="experience" class="section">
+      <h2 class="section-title">Experience</h2>
+      <ol class="timeline">
+        <li>
+          <div class="when">2021 – present</div>
+          <div>
+            <h4>iOS Developer · Company</h4>
+            <p>One or two lines of impact.</p>
+          </div>
+        </li>
+      </ol>
+    </section>
+    -->
+
+    <!-- Contact -->
+    <section id="contact" class="section contact">
+      <h2 class="section-title">Let's talk</h2>
+      <p class="lede">I'm open to iOS roles and freelance projects. The fastest way to reach me is email.</p>
+      <div class="actions">
+        <a class="btn primary" href="mailto:kubaa771@gmail.com">kubaa771@gmail.com</a>
+        <a class="btn" href="https://github.com/jiwaszek">github.com/jiwaszek</a>
+      </div>
+    </section>
   </main>
 
-  <footer>
-    Contact: <a href="mailto:kubaa771@gmail.com">kubaa771@gmail.com</a>
+  <footer class="wide">
+    © 2026 Jakub Iwaszek · <a href="/support/">App support</a> · <a href="/privacy/">Privacy</a>
   </footer>
 </body>
 </html>
